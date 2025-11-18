@@ -1,1 +1,1 @@
-# MicroRabbit
+# MicroRabbit repository.
