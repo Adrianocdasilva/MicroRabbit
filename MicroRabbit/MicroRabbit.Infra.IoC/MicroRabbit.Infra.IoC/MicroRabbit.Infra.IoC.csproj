@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MicroRabbit.Banking.Domain\MicroRabbit.Domain.Core\MicroRabbit.Domain.Core.csproj" />
+    <ProjectReference Include="..\..\MicroRabbit.Domain.Core\MicroRabbit.Domain.Core.csproj" />
     <ProjectReference Include="..\..\MicroRabbit.Infra.Bus\MicroRabbit.Infra.Bus\MicroRabbit.Infra.Bus.csproj" />
   </ItemGroup>
 
