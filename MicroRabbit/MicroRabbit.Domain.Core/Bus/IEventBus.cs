@@ -9,7 +9,7 @@ namespace MicroRabbit.Domain.Core.Bus
 {
     public interface IEventBus
     {
-        Task Send<T>(T command) where T : Command;
+        Task SendCommand<T>(T command) where T : Command;
 
         void Publish<T>(T @event) where T : Event;
 
