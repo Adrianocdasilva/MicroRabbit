@@ -1,4 +1,5 @@
 ﻿using MicroRabbit.Transfer.Application.Interfaces;
+using MicroRabbit.Transfer.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace MicroRabbit.Transfer.Api.Controllers
 
         // GET api/transfer
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<TransferLog>> Get()
         {
             return Ok(_transferService.GetTransferLogs());
         }
