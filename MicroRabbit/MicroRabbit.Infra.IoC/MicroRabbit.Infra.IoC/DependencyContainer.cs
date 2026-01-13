@@ -24,7 +24,14 @@ namespace MicroRabbit.Infra.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             //Domain Bus
-            services.AddTransient<IEventBus, RabbitMQBus>();
+            services.AddTransient<IEventBus, RabbitMQBus>( sp => 
+            {
+                var scopeFacory = sp.GetRequiredService<IServiceScopeFactory>();
+                return new RabbitMQBus(sp.GetService<IMediator>(), scopeFacory);
+            });
+
+            //Subscriptions
+            services.AddTransient<TransferEventHandler>();
 
             //Domain Events
             services.AddTransient<IEventHandler<TransferCreatedEvent>, TransferEventHandler>();
